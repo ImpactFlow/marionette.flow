@@ -1,0 +1,65 @@
+{
+  "name": "marionette.flow",
+  "version": "0.1.0",
+  "description": "Build user workflows with views and directed graphs",
+  "main": "marionette.flow.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.json .",
+    "test": "node_modules/.bin/jest"
+  },
+  "keywords": [
+    "marionette",
+    "workflow",
+    "graph",
+    "directed",
+    "traversal"
+  ],
+  "contributors": [
+    "Kevin Garsjo <krgarsjo@gmail.com> (https://www.kgarsjo.com)",
+    "ImpactFlow <impactflow@impactflow.com> (https://www.impactflow.com)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "flow": "kgarsjo/flow#v0.1.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "backbone": "^1.0.0",
+    "backbone.marionette": "^1.8.8",
+    "eslint": "^3.12.2",
+    "jasmine": "^2.5.2",
+    "jest": "^18.0.0",
+    "jquery": "^2.2.0",
+    "webpack": "^1.14.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/**/*.js",
+      "!**/coverage/**",
+      "!**/dist/**",
+      "!**/node_modules/**",
+      "!**/tests/**",
+      "!**/webpack.config.js"
+    ],
+    "coverageDirectory": "./coverage",
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 95,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "verbose": true
+  },
+  "peerDependencies": {
+    "backbone": ">=1.0.0",
+    "backbone.marionette": ">=1.8.8"
+  }
+}
