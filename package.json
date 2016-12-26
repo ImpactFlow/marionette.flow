@@ -11,8 +11,9 @@
   "keywords": [
     "marionette",
     "workflow",
-    "graph",
+    "view",
     "directed",
+    "graph",
     "traversal"
   ],
   "contributors": [
