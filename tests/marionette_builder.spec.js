@@ -46,12 +46,14 @@ describe('marionette_builder', function () {
 
         it('should create a graph matching definition', function () {
             var graph = flow.getGraph();
+            var v1_nextVertex = graph.getNextVertex(graph.getVertexNamed('v1'));
+            var v2_nextVertex = graph.getNextVertex(graph.getVertexNamed('v2'));
+
             expect(graph.getAllVertexNames()).toEqual(['v1', 'v2', 'v3']);
-            expect(graph.getAllEdges()).toEqual({
-                'v1': 'v2',
-                'v2': 'v3',
-            });
-            expect(graph.getSourceVertex()).toEqual('v1');
+            expect(graph.getSourceVertex().getName()).toEqual('v1');
+            expect(v1_nextVertex.getName()).toEqual('v2');
+            expect(v2_nextVertex.getName()).toEqual('v3');
+            expect(graph.getAllSinkNames()).toEqual(['v3']);
         });
 
         it('should have an actionBuilderFn which returns a MarionetteShowAction', function () {

@@ -1028,9 +1028,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flow@kgarsjo/flow#v0.1.1:
-  version "0.1.0"
-  resolved "https://codeload.github.com/kgarsjo/flow/tar.gz/607ec792864170c1b90cfa07cef8113853e912b1"
+flow@kgarsjo/flow#v0.2.0:
+  version "0.2.0"
+  resolved "https://codeload.github.com/kgarsjo/flow/tar.gz/9c6da38531009cd123cf0b40ceef4b924872c292"
   dependencies:
     underscore "^1.8.3"
 
