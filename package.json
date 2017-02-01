@@ -38,6 +38,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/**/*.js",
+      "!**/marionette.flow.js",
       "!**/coverage/**",
       "!**/dist/**",
       "!**/node_modules/**",
