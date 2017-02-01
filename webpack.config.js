@@ -10,6 +10,16 @@ var fullOutputConfig = {
     entry: {
         library: './marionette.flow'
     },
+    externals: [
+        {
+            'backbone.marionette': {
+                root: 'Marionette',
+                commonjs2: 'backbone.marionette',
+                commonjs: 'backbone.marionette',
+                amd: 'backbone.marionette',
+            }
+        }
+    ],
 };
 
 var minfiedOutputConfig = {
@@ -22,6 +32,16 @@ var minfiedOutputConfig = {
     entry: {
         library: './marionette.flow'
     },
+    externals: [
+        {
+            'backbone.marionette': {
+                root: 'Marionette',
+                commonjs2: 'backbone.marionette',
+                commonjs: 'backbone.marionette',
+                amd: 'backbone.marionette',
+            }
+        }
+    ],
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: false,
