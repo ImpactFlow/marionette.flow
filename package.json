@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "flow": "kgarsjo/flow#v0.1.1",
+    "flow": "kgarsjo/flow#v0.2.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
@@ -38,6 +38,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/**/*.js",
+      "!**/marionette.flow.js",
       "!**/coverage/**",
       "!**/dist/**",
       "!**/node_modules/**",

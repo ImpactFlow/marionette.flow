@@ -1,7 +1,6 @@
 'use strict';
 
 var Flow = require('flow');
-var Marionette = require('backbone.marionette');
 
 describe('marionette.flow', function () {
     var exported = require('../marionette.flow');
@@ -14,12 +13,7 @@ describe('marionette.flow', function () {
         expect(Flow.Builder.MarionetteBuilder).toBeDefined();
     });
 
-    it('should define Marionette.FlowBuilder', function () {
-        expect(Marionette.FlowBuilder).toBeDefined();
-        expect(Marionette.FlowBuilder).toEqual(Flow.Builder.MarionetteBuilder);
-    });
-
     it('should export Marionette', function () {
-        expect(exported).toEqual(Marionette);
+        expect(exported).toEqual(Flow);
     });
 });
