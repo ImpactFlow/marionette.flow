@@ -1,11 +1,13 @@
 'use strict';
 
 var Flow = require('flow');
-var Marionette = require('backbone.marionette');
+var Marionette = window.Marionette;
 
 Flow.Action.ShowAction = require('./lib/show_action');
 Flow.Builder.MarionetteBuilder = require('./lib/marionette_builder');
 
-Marionette.FlowBuilder = Flow.Builder.MarionetteBuilder;
+if (Marionette) {
+    Marionette.FlowBuilder = Flow.Builder.MarionetteBuilder;
+}
 
-module.exports = Marionette;
+module.exports = Flow;
