@@ -56,10 +56,9 @@ describe('marionette_builder', function () {
             expect(graph.getAllSinkNames()).toEqual(['v3']);
         });
 
-        it('should have an actionBuilderFn which returns a MarionetteShowAction', function () {
-            var showActionFn = flow.getActionBuilderFunctions()[0];
-            var payload = { viewFn: viewFunction };
-            expect(showActionFn(flow, payload) instanceof ShowAction).toEqual(true);
+        it('should have a MarionetteShowAction', function () {
+            var action = flow.getActions()[0];
+            expect(action instanceof ShowAction).toEqual(true);
         });
 
         it('should inject finished functions', function () {
