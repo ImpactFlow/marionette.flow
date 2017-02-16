@@ -6,10 +6,11 @@ var Marionette = require('backbone.marionette');
 var ShowAction = require('../lib/show_action');
 
 describe('show_action', function () {
-    var adapter;
+    var action;
     var flow;
     var payload;
     var region;
+    var view;
 
     var assertNextBehavior = function () {
         it('should call next on the passed flow', function () {
@@ -22,40 +23,51 @@ describe('show_action', function () {
         flow = {
             next: jasmine.createSpy(),
         };
-        payload = new Marionette.View();
+        view = new Marionette.View();
+        payload = function () {
+            return view;
+        };
         region = new Marionette.Region({
             el: document.createElement('div'),
         });
-        adapter = new ShowAction({
-            flow: flow,
-            payload: payload,
+        action = new ShowAction({
             region: region,
         });
+        action.setFlow(flow);
+
     });
 
     it('should exist', function () {
-        expect(adapter).toBeDefined();
+        expect(action).toBeDefined();
     });
 
     describe('when calling next', function () {
         beforeEach(function () {
-            adapter.next();
-        });
-        assertNextBehavior();
-    });
-
-    describe('when receiving a "next" event from the payload view', function () {
-        beforeEach(function () {
-            payload.trigger('next');
+            action.next();
         });
         assertNextBehavior();
     });
 
     describe('when calling start', function () {
-        it('should show the payload view on the passed region', function () {
+        beforeEach(function () {
             spyOn(region, 'show');
-            adapter.start();
-            expect(region.show).toHaveBeenCalledWith(payload);
+            action.start(payload);
+        });
+
+        it('should show the payload view on the passed region', function () {
+            expect(region.show).toHaveBeenCalledWith(view);
+        });
+
+        describe('when triggering next', function () {
+            beforeEach(function () {
+                view.trigger('next');
+            });
+
+            assertNextBehavior();
+
+            it('should remove onNext listener', function () {
+                expect(view._events['next']).not.toBeDefined();
+            });
         });
     });
 });
