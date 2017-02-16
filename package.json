@@ -1,6 +1,6 @@
 {
   "name": "marionette.flow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build user workflows with views and directed graphs",
   "main": "marionette.flow.js",
   "scripts": {
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "flow": "kgarsjo/flow#v0.2.0",
+    "flow": "kgarsjo/flow#v0.3.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
