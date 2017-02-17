@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "flow": "kgarsjo/flow#v0.3.0",
+    "flow": "ImpactFlow/flow#v0.3.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
