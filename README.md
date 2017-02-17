@@ -1,6 +1,6 @@
 # Marionette.Flow
 
-[![Build Status](https://travis-ci.org/kgarsjo/marionette.flow.svg?branch=master)](https://travis-ci.org/kgarsjo/marionette.flow)
+[![Build Status](https://travis-ci.org/ImpactFlow/marionette.flow.svg?branch=master)](https://travis-ci.org/ImpactFlow/marionette.flow)
 
 > Build complex workflows with Views and Directed Graphs
 
